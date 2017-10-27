@@ -7,4 +7,4 @@ libm7m_a_SOURCES = haval.c keccak.c \
 		sph_sha2.h sph_tiger.h sph_whirlpool.h \
 		tiger.c whirlpool.c
 
-libm7m_a_CFLAGS = -Ofast -march=native -flto
+libm7m_a_CFLAGS = -Ofast -mcpu=cortex-a53 -flto
