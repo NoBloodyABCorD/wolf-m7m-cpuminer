@@ -387,7 +387,7 @@ minerd_SOURCES = elist.h miner.h compat.h \
 
 minerd_LDFLAGS = $(PTHREAD_FLAGS) -flto -fuse-linker-plugin -Ofast
 minerd_LDADD = @JANSSON_LIBS@ @PTHREAD_LIBS@ @WS2_LIBS@ -lgmp -lcurl -lm
-minerd_CPPFLAGS = -Im7 -Ofast -march=native -flto -fuse-linker-plugin
+minerd_CPPFLAGS = -Im7 -Ofast -mcpu=cortex-a53 -flto -fuse-linker-plugin
 all: cpuminer-config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
