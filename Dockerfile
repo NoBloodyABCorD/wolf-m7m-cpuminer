@@ -15,11 +15,11 @@ RUN		apt-get install -qqy libcurl4-openssl-dev
 RUN		apt-get install -qqy git
 RUN		apt-get install -qqy make
 
-RUN		git clone https://github.com/pooler/cpuminer
+RUN		git clone https://github.com/NoBloodyABCorD/wolf-m7m-cpuminer
 
-RUN		cd cpuminer && ./autogen.sh
-RUN		cd cpuminer && ./configure CFLAGS="-O3"
-RUN		cd cpuminer && make
+RUN		cd wolf-m7m-cpuminer && ./autogen.sh
+RUN		cd wolf-m7m-cpuminer && CFLAG="-O2 mfpu=neon-vfpv4" ./configure
+RUN		cd wolf-m7m-cpuminer && make -j4
 
-WORKDIR		/cpuminer
+WORKDIR		/wolf-m7m-cpuminer
 ENTRYPOINT	["./minerd"]
